@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<table>
+<tr>
+    <td colspan="4">
+        <input type="text" id="txtId" value="0">
+    </td>
+</tr>
+ <tr>
+    <th>
+       <input type="button" value="7"  onclick="ekranaYaz(7)">
+    </th>
+    <th>
+        <input type="button" value="8"  onclick="ekranaYaz(8)">
+    </th>
+    <th>
+        <input type="button" value="9"  onclick="ekranaYaz(9)">
+    </th>
+    <th>
+        <input type="button" value="+" onclick="toplama()" >
+    </th>
+ </tr>
+  <tr>
+      <th>
+          <input type="button" value="4" onclick="ekranaYaz(4)">
+      </th>
+      <th>
+          <input type="button" value="5" onclick="ekranaYaz(5)">
+      </th>
+      <th>
+          <input type="button" value="6" onclick="ekranaYaz(6)">
+      </th>
+      <th>
+          <input type="button" value="-" onclick="cikarma()">
+      </th>
+  </tr>
+  <tr>
+      <th>
+          <input type="button" value="1" onclick="ekranaYaz(1)">
+      </th>
+      <th>
+          <input type="button" value="2" onclick="ekranaYaz(2)">
+      </th>
+      <th>
+          <input type="button" value="3" onclick="ekranaYaz(3)">
+      </th>
+      <th>
+          <input type="button" value="*" onclick="carpma()">
+      </th>
+  </tr>
+  <tr>
+      <th>
+          <input type="button" value="C" onclick="temizle()">
+      </th>
+      <th>
+          <input type="button" value="0" onclick="ekranaYaz(0)">
+      </th>
+      <th>
+          <input type="button" value="=" onclick="esittir()">
+      </th>
+      <th>
+          <input type="button" value="/" onclick="bolme()">
+      </th>
+  </tr>
+
+</table>
+
+<script>
+    var sayi1;
+    var islem;
+    function ekranaYaz(sayi){
+        if(document.getElementById("txtId").value==0){
+            document.getElementById("txtId").value=sayi;
+        }
+        else{
+            document.getElementById("txtId").value += sayi;
+        }
+    }
+    function toplama(){
+        sayi1 = parseInt(document.getElementById("txtId").value);
+        document.getElementById("txtId").value="";
+        islem = toplama;
+    }
+    function cikarma(){
+        sayi1 = parseInt(document.getElementById("txtId").value);
+        document.getElementById("txtId").value="";
+        islem = cikarma;
+    }
+    function carpma(){
+        sayi1= parseInt(document.getElementById("txtId").value);
+        document.getElementById("txtId").value="";
+        islem= carpma;
+    }
+    function bolme(){
+        sayi1 = parseInt(document.getElementById("txtId").value);
+        document.getElementById("txtId").value="";
+        islem = bolme;
+    }
+    function esittir(){
+        sayi2= parseInt(document.getElementById("txtId").value);
+        if(islem==toplama){
+            document.getElementById("txtId").value=sayi1+sayi2;
+        }
+        if(islem==cikarma){
+            document.getElementById("txtId").value=sayi1-sayi2;
+
+        }
+        if(islem==carpma){
+            document.getElementById("txtId").value=sayi1*sayi2;
+        }
+        if(islem==bolme){
+            document.getElementById("txtId").value=sayi1/sayi2;
+        }
+
+    }
+    function temizle(){
+        document.getElementById("txtId").value="0";
+    }
+
+</script>
+
+</body>
+
+</html>
